@@ -88,6 +88,9 @@ export const addBill = () => {
   };
 };
 
+/**
+ * Function to calculate minimum bill which can be paid within a monthly budget
+ */
 export const calculatePayableBill = () => {
   return async (dispatch) => {
     try {
