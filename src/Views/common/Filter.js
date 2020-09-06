@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./styles/filterStyle.scss";
+import "./styles/filterStyle.scss";
 
 const Filter = ({ FilterBillHandler }) => {
   const [value, setSearch] = useState("");

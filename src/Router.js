@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from "./Views/dashboard/Dashboard";
+import CustomChart from "./Views/common/Chart";
 
 const RouterComponent = () => {
   return (
@@ -8,6 +9,9 @@ const RouterComponent = () => {
       <Switch>
         <Route exact path="/">
           <Dashboard />
+        </Route>
+        <Route path="/chart">
+          <CustomChart />
         </Route>
       </Switch>
     </Router>

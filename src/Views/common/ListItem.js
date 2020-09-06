@@ -8,10 +8,11 @@ import "./styles/listItem.scss";
 
 ListItem.propTypes = {
   listItem: PropTypes.any.isRequired,
+  payable: PropTypes.any.isRequired
 };
 
 function ListItem(props) {
-  const { listItem, deleteClick } = props;
+  const { listItem, deleteClick, payable } = props;
 
   return (
     <Card variant="outlined" style={styles.containerStyle}>
@@ -24,6 +25,7 @@ function ListItem(props) {
           </div>
           <div>
             <Text text={`Rs. ${listItem.amount}`} />
+            {payable && <Text text={`Payable`} />}
             <Button
               style={styles.deleteButtonStyle}
               onClick={(event) => deleteClick(event, listItem)}

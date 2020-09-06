@@ -4,6 +4,7 @@ import Text from "../common/Text";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import "./bottomComponent.scss";
+import { calculateSum } from "../../util/utils";
 
 BottomComponent.propTypes = {
   list: PropTypes.any,
@@ -13,13 +14,7 @@ function BottomComponent(props) {
   const { list } = props;
 
   const renderTotalAmount = () => {
-    let sum = 0;
-    if (list) {
-      list.forEach((arg) => {
-        sum += parseInt(arg.amount);
-      });
-    }
-    return <Text text={`Rs. ${sum}`} />;
+    return <Text text={`Rs. ${calculateSum(list)}`} />;
   };
 
   return (
@@ -38,7 +33,7 @@ function BottomComponent(props) {
 const styles = {
   containerStyle: {
     margin: 7,
-    backgroundColor: "#D0D0D0"
+    backgroundColor: "#D0D0D0",
   },
 };
 
